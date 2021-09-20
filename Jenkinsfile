@@ -36,7 +36,7 @@ pipeline {
         script {
           if (GIT_BRANCH ==~ /.*master.*/) {
             sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
-            sh "docker push ${DOCKER_IMAGE}:latest"
+            sh "docker push thienlan1004/devops_v1:latest"
           }
         }
 
