@@ -21,6 +21,7 @@ pipeline {
       }
     }
   }
+}
 //     stage("build") {
 //       agent { node {label 'master'}}
 //       environment {
