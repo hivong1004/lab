@@ -32,11 +32,12 @@ pipeline {
         }
 
         sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
-        sh "docker push thienlan1004/devops_v1:latest"
+        sh "docker push thienlan1004/devops_v1:${DOCKER_TAG}"
         script {
           if (GIT_BRANCH ==~ /.*master.*/) {
             sh "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
-            sh "docker push thienlan1004/devops_v1:latest"
+            sh "docker image tag ${DOCKER_IMAGE}:${DOCKER_TAG} thienlan1004/devops_v1:${DOCKER_TAG}"
+            sh "docker push thienlan1004/devops_v1:${DOCKER_TAG}"
           }
         }
 
