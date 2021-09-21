@@ -34,7 +34,7 @@ pipeline {
             sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
             sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
             sh "docker push ${DOCKER_IMAGE}:latest"
-            echo "Test"
+            echo "Test 10:18 AM"
         }
 
         //clean to save disk
